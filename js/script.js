@@ -51,19 +51,6 @@ for (let i = 0; i < team.length; i++) {
 
 }
 
-/*
-<div class="form-container">
-  <label for="name">Name </label>
-  <input type="text" id="name" />
-  <label for="role">Role </label>
-
-  <input type="text" id="role" />
-  <label for="name">Image </label>
-  <input type="text" id="image" />
-  <button type="button" id="addMemberButton">Add</button>
-</div>
-*/
-
 // aggiungere team member dai input
 const buttonHtml = document.getElementById('addMemberButton');
 
@@ -76,7 +63,7 @@ buttonHtml.addEventListener('click', function(){
   const newMember = {
     name: nameHtml,
     role: roleHtml,
-    image: `new-team-member-${imageHtml}.jpg`,
+    image: imageHtml,
   }
 
   console.log(newMember);
