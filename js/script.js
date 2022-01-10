@@ -63,10 +63,24 @@ buttonHtml.addEventListener('click', function(){
   const newMember = {
     name: nameHtml,
     role: roleHtml,
-    image: imageHtml,
+    image: `new-team-member-${imageHtml}.jpg`,
   }
 
   console.log(newMember);
 
   team.push(newMember);
+
+  containerHtml.innerHTML += 
+  `
+  <div class="team-card">
+    <div class="card-image">
+      <img src="./img/${newMember.image}" alt="member profile"/>
+    </div>
+    <div class="card-text">
+      <h3>${newMember.name}</h3>
+      <p>${newMember.role}</p>
+    </div>
+  </div>  
+  `
+
 })
