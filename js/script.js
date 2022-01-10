@@ -1,3 +1,19 @@
+// funzione per generare la card del team member
+function generateHtml(object) {
+  containerHtml.innerHTML += 
+  `
+  <div class="team-card">
+    <div class="card-image">
+      <img src="./img/${object.image}" alt="member profile"/>
+    </div>
+    <div class="card-text">
+      <h3>${object.name}</h3>
+      <p>${object.role}</p>
+    </div>
+  </div>  
+  `
+}
+
 const team = [
     {
       name: 'Wayne Barnett',
@@ -35,20 +51,7 @@ const containerHtml = document.querySelector('.team-container');
 
 // ciclo per inserire ogni team member 
 for (let i = 0; i < team.length; i++) {
-
-  containerHtml.innerHTML += 
-  `
-  <div class="team-card">
-    <div class="card-image">
-      <img src="./img/${team[i].image}" alt="member profile"/>
-    </div>
-    <div class="card-text">
-      <h3>${team[i].name}</h3>
-      <p>${team[i].role}</p>
-    </div>
-  </div>  
-  `
-
+  generateHtml(team[i]);
 }
 
 // aggiungere team member dai input
@@ -65,22 +68,7 @@ buttonHtml.addEventListener('click', function(){
     role: roleHtml,
     image: `new-team-member-${imageHtml}.jpg`,
   }
-
-  console.log(newMember);
-
   team.push(newMember);
-
-  containerHtml.innerHTML += 
-  `
-  <div class="team-card">
-    <div class="card-image">
-      <img src="./img/${newMember.image}" alt="member profile"/>
-    </div>
-    <div class="card-text">
-      <h3>${newMember.name}</h3>
-      <p>${newMember.role}</p>
-    </div>
-  </div>  
-  `
-
+  generateHtml(newMember);
 })
+
