@@ -65,16 +65,21 @@ for (let i = 0; i < team.length; i++) {
 */
 
 // aggiungere team member dai input
-const nameHtml = document.getElementById('name');
-const roleHtml = document.getElementById('role');
-const imageHtml = document.getElementById('name');
 const buttonHtml = document.getElementById('addMemberButton');
 
 buttonHtml.addEventListener('click', function(){
+
+  let nameHtml = document.getElementById('name').value;
+  let roleHtml = document.getElementById('role').value;
+  let imageHtml = document.getElementById('image').value;
+
   const newMember = {
     name: nameHtml,
     role: roleHtml,
+    image: `new-team-member-${imageHtml}.jpg`,
   }
 
   console.log(newMember);
+
+  team.push(newMember);
 })
