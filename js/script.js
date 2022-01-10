@@ -33,6 +33,7 @@ const team = [
   
 const containerHtml = document.querySelector('.team-container');
 
+// ciclo per inserire ogni team member 
 for (let i = 0; i < team.length; i++) {
 
   containerHtml.innerHTML += 
@@ -49,3 +50,31 @@ for (let i = 0; i < team.length; i++) {
   `
 
 }
+
+/*
+<div class="form-container">
+  <label for="name">Name </label>
+  <input type="text" id="name" />
+  <label for="role">Role </label>
+
+  <input type="text" id="role" />
+  <label for="name">Image </label>
+  <input type="text" id="image" />
+  <button type="button" id="addMemberButton">Add</button>
+</div>
+*/
+
+// aggiungere team member dai input
+const nameHtml = document.getElementById('name');
+const roleHtml = document.getElementById('role');
+const imageHtml = document.getElementById('name');
+const buttonHtml = document.getElementById('addMemberButton');
+
+buttonHtml.addEventListener('click', function(){
+  const newMember = {
+    name: nameHtml,
+    role: roleHtml,
+  }
+
+  console.log(newMember);
+})
